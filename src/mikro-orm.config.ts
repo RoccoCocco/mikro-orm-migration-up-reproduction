@@ -5,14 +5,15 @@ import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 const mikroOrmConfig: MikroOrmModuleSyncOptions = {
   driver: PostgreSqlDriver,
   dbName: "my-db",
+  // debug: true,
   discovery: {
     checkDuplicateTableNames: false,
     checkDuplicateFieldNames: false,
   },
-  entities: ["src/**/*.entity.{ts,js}"],
+  entities: ["dist/**/*.entity.{ts,js}"],
   extensions: [Migrator],
   migrations: {
-    path: "src/migrations",
+    path: "dist/migrations",
     snapshot: false,
     fileName: (timestamp) => `${timestamp}-new-migration`,
   },

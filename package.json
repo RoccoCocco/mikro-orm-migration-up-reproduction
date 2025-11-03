@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "db:migrate": "mikro-orm migration:up",
     "db:migrate:down": "mikro-orm migration:down",
-    "db:migration:create": "mikro-orm migration:create --blank",
+    "db:migration:create": "mikro-orm migration:create",
+    "run:example": "node dist/index.js",
     "start": "jest",
     "test": "jest"
   },
@@ -21,7 +21,8 @@
     "@mikro-orm/postgresql": "6.5.9",
     "@mikro-orm/seeder": "6.5.9",
     "@mikro-orm/sql-highlighter": "1.0.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "uuid": "11.0.0"
   },
   "mikro-orm": {
     "useTsNode": true,
